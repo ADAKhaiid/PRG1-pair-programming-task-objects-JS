@@ -65,27 +65,30 @@ function searchByBookName(searchTerm) {
 function displayLoanTotals() {
    let booksLoaned = 0 
    let booksNotloaned = 0
-   for (i = 0 ; i < library.length ; i++) {
+   for ( i = 0 ; i < library.length ; i++) {
         if (library[i].isLoaned) {
-            booksLoaned = booksLoaned + 1
+            booksLoaned = booksLoaned + 1;
         }
     else {
-            booksNotloaned = booksNotloaned +1
+            booksNotloaned = booksNotloaned +1; 
         }
     }
-return booksNotloaned, booksLoaned
+console.log(`Total books on loan: ${booksLoaned} and Total books not on loan: ${booksNotloaned}`)
+
 }
-  
   
 function alterBookStatus(bookTitle, newStatus) {
-    
+    bookTitle = "kk"
 }
-  
-  
+
+console.log(displayLoanTotals) 
+
 function addNewBook(title, author, isLoaned) {
     
+    
 }
   
+
 
 function removeBook(bookTitle) {
 
