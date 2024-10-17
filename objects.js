@@ -40,7 +40,6 @@ function loanStatus(lib) {
 
 function getBooksByAuthor(authorName) {
     const booksByAuthor = [];
-  
     for (const book of library) { // Use for...of loop for cleaner iteration
       if (book.author === authorName) {
         const bookStatus = book.isLoaned ? 'Out on loan' : 'On the shelf'; 
@@ -53,12 +52,28 @@ function getBooksByAuthor(authorName) {
   
 
 function searchByBookName(searchTerm) {
-    
+    let booksBytitle = [];
+    for (const book of library) {
+        if( book.title.toLowerCase() === searchTerm.toLowerCase() ) {
+            booksBytitle.push( {title: book.title, author: book.author});
+        }
+    }
+    return booksBytitle
 }
   
   
 function displayLoanTotals() {
-    
+   let booksLoaned = 0 
+   let booksNotloaned = 0
+   for (i = 0 ; i < library.length ; i++) {
+        if (library[i].isLoaned) {
+            booksLoaned = booksLoaned + 1
+        }
+    else {
+            booksNotloaned = booksNotloaned +1
+        }
+    }
+return booksNotloaned, booksLoaned
 }
   
   
@@ -73,7 +88,7 @@ function addNewBook(title, author, isLoaned) {
   
 
 function removeBook(bookTitle) {
-    
+
 }
   
 
